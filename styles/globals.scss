@@ -1,0 +1,58 @@
+:root {
+  --space : 1rem;
+  --space-sm : .5rem;
+  --border-width : 3px;
+  --text-color: DimGray;
+  --bg-color : white;
+  --color-primary: DarkGray;
+}
+::-moz-selection { /* Code for Firefox */
+  color: silver;
+  background: white;
+}
+
+::selection {
+  color: silver;
+  background: white;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root{
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  & > * { padding: var(--space) 0; }
+}
+nav {
+  display: flex;
+  a{
+    display: inline-block;
+    padding: var(--space-sm) var(--space);
+     color: var(--color-primary);
+    // border-bottom : var(--border-width) dotted transparent;
+   }
+   a:hover{
+     color: silver;
+    background: whitesmoke;
+    //  border-bottom: var(--border-width) dotted var(--color-primary);
+   }
+}

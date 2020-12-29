@@ -1,15 +1,15 @@
 import React from 'react'
-// CONFIG['pageExcludes'] = [ 'app', 'api', 'index']
 import Link from 'next/link'
 
-function Header(props) {
+function Header() {
     return (
-        <div>
-            {props.pages.map(page =>
-                <li>{page}</li>
-            )}
-                {/* <Link  href={page} /> */}
-        </div>
+        <nav>
+            <Link href={'/'} >Home</Link>
+            <Link href={'/apps'} >Apps</Link>
+            <Link href={'/experience'} >Experience</Link>
+            <Link href={'/repos'} >Repos</Link>
+            <Link href={'/me'} >Me</Link>
+        </nav>
     )
 }
 

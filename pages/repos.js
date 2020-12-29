@@ -1,11 +1,7 @@
-import Header from "../components/Header";
 
 const repos = (props) => {
-    console.log(props)
     return (
         <div>
-            <Header />
-
             <h1>Repos</h1>
             <main>
                 <ul>
