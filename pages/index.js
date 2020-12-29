@@ -1,65 +1,54 @@
 import Head from 'next/head'
+import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
-
-export default function Home() {
+const path = require('path');
+const fs = require('fs');
+const pageExcludes = [ '_app.js', 'api', 'index.js']
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Pablo Lizardo 👨‍💻</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header pages={props.pages}/>
+      <p>pablo<strong>lizardo</strong></p>
+      <main dangerouslySetInnerHTML={{ __html: props.html }} />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+
+  const { Converter } = require('showdown');
+  const converter = new Converter();
+
+  function parseREADME() {
+    return new Promise((res) => {
+      fs.readFile(path.join(process.cwd(), 'README.md'), (err, data) => {
+        const readme = data.toString();
+        const html = converter.makeHtml(readme);
+        res(html);
+      });
+    });
+  }
+  function getPages() {
+    return new Promise((res) => {
+      fs.readdir(path.join(process.cwd(), 'pages'), (err, data) => {
+        const pageFiles = data.filter((f) => {
+          return !pageExcludes.filter((ex) => f === ex).pop();
+        });
+
+        res(pageFiles.map((p) => p.replace('.js', '')));
+      });
+    });
+  }
+  const pages = await getPages();
+  const html = await parseREADME();
+
+  return {
+    props: { html, pages },
+  };
 }
