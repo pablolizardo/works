@@ -1,0 +1,116 @@
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-3 { flex: 3; }
+.flex-4 { flex: 4; }
+.flex-5 { flex: 5; }
+
+.h-100 { height: 100%; }
+
+.mono {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+
+.icon-xs { width: var(--icon-xs); height: var(--icon-xs); }
+.icon-sm { width: var(--icon-sm); height: var(--icon-sm); }
+.icon { width: var(--icon); height: var(--icon); }
+.icon-xl { width: var(--icon-xl); height: var(--icon-xl); }
+.icon-lg { width: var(--icon-lg); height: var(--icon-lg); }
+
+.gap { gap: var(--space); }
+.gap-sm { gap: var(--space-sm); }
+.gap-xs { gap: var(--space-xs); }
+
+// WIDTHS
+.fifth { width: 20%; }
+.fourth { width: 25%; }
+.third { width: 33%; }
+.two-fifths { width: 40%; }
+.half { width: 50%; }
+.two-thirds { width: 66%; }
+
+.max-w-xl { max-width: 1440px; }
+.max-w-lg { max-width: 1080px; }
+.max-w-base { max-width: 960px; }
+.max-w-md { max-width: 800px; }
+.max-w-sm { max-width: 740px; }
+.max-w-xs { max-width: 560px; }
+
+.mx-auto { margin: auto; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+.rounded { border-radius: var(--border-radius); }
+
+.debug { border: 1px dotted red; }
+
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.space-between { justify-content: space-between; }
+
+
+
+
+
+.text-muted { color: var(--gray); }
+
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+.text-xl {
+  font-size: var(--text-xl);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-base {
+  font-size: var(--text-base);
+}
+.text-sm,
+.small,
+small {
+  font-size: var(--text-sm);
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.p-xs {
+  padding: var(--space-xs);
+}
+.p-sm {
+  padding: var(--space-sm);
+}
+.p {
+  padding: var(--space);
+}
+.py {
+  padding: var(--space) auto;
+}
+.pt {
+  padding-top: var(--space);
+}
+.pb {
+  padding-bottom: var(--space);
+}
+
+.m { margin: var(--space); }
+.my { margin: var(--space) auto; }
+.mt { margin-top: var(--space); }
+.mt-sm { margin-top: var(--space-sm); }
+.mb { margin-bottom: var(--space); }

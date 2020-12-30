@@ -1,13 +1,22 @@
+const PROJECTS = require('./../content/projects.json')
+import Image from 'next/image'
 export default function Home(props) {
   return (
     <div>
       <h1>projects 👨‍💻</h1>
       <ul>
-        <li>Reconmap Web client</li>
-        <li>Project</li>
-        <li>Pusher</li>
-        <li>Creamos</li>
-        <li>Viajero</li>
+        {PROJECTS.map( project => 
+          <li>
+            <div>
+
+              <p>{project.title}</p>
+              <p className='text-muted'>{project.subtitle}</p>
+            </div>
+            {project.image && 
+            <Image className='web' src={`/images/${project.image}`} width={250} height={130} objectFit='cover' ></Image>
+            }
+          </li>
+        )}
       </ul>
     </div>
   )

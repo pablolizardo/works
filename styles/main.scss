@@ -1,4 +1,5 @@
 @import 'mediaquery';
+@import 'utilities';
 
 :root {
   --space-xl: 2rem;
@@ -97,10 +98,6 @@ footer {
 }
 
 
-// UTILITIES 
-.text-muted { color : var(--gray); }
-
-
 
 // TYPOGRAPHY
 h1,h2,h3,h4,h5,h6{
@@ -125,17 +122,26 @@ a {
   color: inherit;
   text-decoration: none;
 }
-small, .small {
-  font-size: var(--text-sm);
-}
+
 ul {
   list-style-type: square;
-  padding: 0 var(--space-lg);
+  padding: 0 ;
   li{
-    padding: var(--space-sm) 0;
     
+    display: flex;
+    padding: var(--space-sm) 0;
+    justify-content: space-between;
+    align-items: center;
     p{
       margin: 0;
     }
+    
   }
+}
+
+
+.web {
+  margin-left: var(--space-lg);
+  border:var(--border-width) solid var(--gray-light)!important;
+  border-bottom-width: calc( var(--border-width) * 3 )!important;
 }
