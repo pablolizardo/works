@@ -2,11 +2,14 @@
 const repos = (props) => {
     return (
         <div>
-            <h1>Repos</h1>
+            <h1>repos 📱</h1>
             <main>
                 <ul>
                     {props.data.map(repo =>
-                        <li>{repo.name}</li>
+                        <li>
+                            <p>{repo.name}</p>
+                            <p className='text-muted'>{repo.description}</p>
+                        </li>
                     )}
                 </ul>
             </main>
