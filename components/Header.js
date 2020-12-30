@@ -3,13 +3,13 @@ import Link from 'next/link'
 
 function Header() {
     return (
-        <nav>
-            <Link href={'/'} >Home</Link>
-            <Link href={'/apps'} >Apps</Link>
-            <Link href={'/experience'} >Experience</Link>
-            <Link href={'/repos'} >Repos</Link>
-            <Link href={'/me'} >Me</Link>
-        </nav>
+        <header>
+            <Link href={'/'} >projects</Link>
+            <Link href={'/repos'} >repos</Link>
+            <Link href={'/me'} >about me</Link>
+            {/* <Link href={'/'} >home</Link> */}
+            {/* <Link href={'/contributions'} >contributions</Link> */}
+        </header>
     )
 }
 

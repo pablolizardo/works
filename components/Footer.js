@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 function Footer() {
     return (
-        <div>
+        <footer>
             created with ♥ by pablo<strong>lizardo</strong>
-        </div>
+        </footer>
     )
 }
 
