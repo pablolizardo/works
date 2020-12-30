@@ -7,10 +7,11 @@
       'footer footer' !important;
       grid-template-columns: 1fr;
       grid-auto-rows:  auto ;
-      min-height: auto!important;;
-      gap: var(--space);
+      min-height: auto!important;
+      gap: var(--space-sm)!important;
     }
     aside {
+      margin-top: var(--space-lg);
       display: grid;
       align-items: center;
       grid-template-columns: 150px 1fr;
@@ -23,6 +24,9 @@
       h1,h2,h3, p {
         margin:0;
         padding: 0;
+      }
+      p:last-child{
+        display: none;
       }
     }
     h1{
