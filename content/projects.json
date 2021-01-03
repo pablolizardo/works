@@ -1,35 +1,41 @@
 [
     {
         "title": "reconmap",
+        "slug": "reconmap",
         "subtitle":"Open-source pentesting management and reporting platform",
         "description":"Reconmap is an open source security tool for InfoSec professionals that allows them to plan, execute and document pentest and reconnaissance projects for multiple targets and clients",
-        "image":"reconmap_web.png"
+        "web":"reconmap_web.png"
     },
     {
         "title": "project",
+        "slug": "project",
         "subtitle":"App to plan and track your dev projects in a timeline view",
         "description":"",
-        "image":"projects_web.png"
+        "web":"projects_web.png"
 
 
     },
     {
         "title": "pusher 📱",
+        "slug": "pusher",
         "subtitle":"Web app to send push notifications to React Native Expo app using iOS push and Android PSM",
         "description":""
     },
     {
         "title": "viajero 📱",
+        "slug": "viajero",
         "subtitle":"Puzzle game created in godot engine",
         "description":""
     },
     {
         "title": "cuo 📱",
+        "slug": "cuo",
         "subtitle":"Open-source pentesting management and reporting platform",
         "description":""
     },
     {
         "title": "camino 🚕",
+        "slug": "camino",
         "subtitle":"Car rental open source solution ",
         "description":""
     }

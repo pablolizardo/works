@@ -42,6 +42,12 @@
 .mx-auto { margin: auto; }
 .ml-auto { margin-left: auto; }
 .mr-auto { margin-right: auto; }
+.mr { margin-right: var(--space); }
+.mb { margin-bottom:var(--space); }
+.m-0 { margin: 0; }
+
+.p-0 { padding: 0; }
+.pt { padding-top: var(--space); }
 
 .rounded { border-radius: var(--border-radius); }
 
