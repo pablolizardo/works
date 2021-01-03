@@ -7,7 +7,7 @@
     },
     {
         "title": "project",
-        "subtitle":"Open-source pentesting management and reporting platform",
+        "subtitle":"App to plan and track your dev projects in a timeline view",
         "description":"",
         "image":"projects_web.png"
 
@@ -15,12 +15,12 @@
     },
     {
         "title": "pusher 📱",
-        "subtitle":"Open-source pentesting management and reporting platform",
+        "subtitle":"Web app to send push notifications to React Native Expo app using iOS push and Android PSM",
         "description":""
     },
     {
         "title": "viajero 📱",
-        "subtitle":"Open-source pentesting management and reporting platform",
+        "subtitle":"Puzzle game created in godot engine",
         "description":""
     },
     {
@@ -30,7 +30,7 @@
     },
     {
         "title": "camino 🚕",
-        "subtitle":"Open-source pentesting management and reporting platform",
+        "subtitle":"Car rental open source solution ",
         "description":""
     }
 
