@@ -34,4 +34,11 @@
       padding-top: 0;
     }
   
+    ul.projects__list {
+      grid-template-columns: 1fr!important;
+      p{
+        max-inline-size: initial!important;
+      }
+       
+    }
   }
