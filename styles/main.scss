@@ -159,7 +159,11 @@ a {
     color : var(--primary-color);
   }
 }
-ul.projects__list {
+img {
+  border-radius: var(--border-radius);
+
+}
+ul.projects__list , ul.repos__list {
   list-style-type: none;
   padding: 0;
   li {
@@ -171,7 +175,7 @@ ul.projects__list {
     padding: var(--space) var(--space);
     border: 1px solid var(--color-gray-lightest);
     box-shadow: 0px 0px 0px transparent;
-    transition: border 3s, box-shadow .1s, opacity .2s;
+    transition: border .3s, box-shadow .1s, opacity .2s;
     cursor: pointer;
     &:hover{
       border : 1px solid transparent;

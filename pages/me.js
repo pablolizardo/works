@@ -6,9 +6,8 @@ const path = require('path');
 function me({html}) {
     return (
         <div>
-            <h1>about me 👋</h1>
+            <h1>About me 👋</h1>
             <main dangerouslySetInnerHTML={{ __html : html }} />
-            
         </div>
     )
 }
