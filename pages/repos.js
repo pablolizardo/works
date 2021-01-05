@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Badge from "../components/Badge"
 
 const repos = (props) => {
@@ -6,18 +7,20 @@ const repos = (props) => {
             <h1>Repos</h1>
             <main>
                 <ul className='repos__list'>
-                    {props.data.map(repo =>
-                        <li>
-                            <div className='two-thirds'>
-                                <p className='m-0 p-0 '>{repo.name}</p>
-                                <p className='m-0 p-0  text-muted text-sm'>{repo.description}</p>
+                    {props.data
+                        .map(repo =>
+                        <Link href={repo.html_url}  target="_blank">
+                            <li>
+                                <div className='two-thirds'>
+                                    <p className='m-0 p-0 '>{repo.name}</p>
+                                    <p className='m-0 p-0  text-muted text-sm'>{repo.description}</p>
 
-                            </div>
-                            <div className='text-sm  text-right'>
-
-                                <Badge color='yellow'>★ {repo.stargazers_count}</Badge>
-                            </div>
-                        </li>
+                                </div>
+                                <div className='text-sm  text-right'>
+                                    <Badge color='yellow'>★ {repo.stargazers_count}</Badge>
+                                </div>
+                            </li>
+                        </Link>
                     )}
                 </ul>
             </main>

@@ -1,6 +1,7 @@
 const PROJECTS = require('./../content/projects.json')
 import Image from 'next/image'
 import Link from 'next/link'
+import Badge from './../components/Badge'
 
 export default function Home(props) {
   return (
@@ -12,7 +13,9 @@ export default function Home(props) {
             <li>
               <div>
                 <h2 className='m-0 p-0'>{project.title}</h2>
-                <p className='text-muted text-small m-0 '>{project.subtitle}</p>
+                <p className='text-muted text-sm m-0 '>{project.subtitle}</p>
+                <p className='m-0 pt text-sm flex gap gap-sm items-center'>
+                {project.tags.map( tag => <Badge>{tag}</Badge>)} </p>
               </div>
               <figure>
                 {project.web && <Image className='web' src={`/images/${project.web}`} width={250} height={130} objectFit='cover' ></Image>}
