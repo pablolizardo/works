@@ -10,8 +10,10 @@ export default function Home(props) {
         {PROJECTS.map(project =>
           <Link href={`/projects/${project.slug}`}>
             <li>
-              <h3>{project.title}</h3>
-              <p className='text-muted text-small'>{project.subtitle}</p>
+              <div>
+                <h2 className='m-0 p-0'>{project.title}</h2>
+                <p className='text-muted text-small m-0 '>{project.subtitle}</p>
+              </div>
               <figure>
                 {project.web && <Image className='web' src={`/images/${project.web}`} width={250} height={130} objectFit='cover' ></Image>}
                 {project.mobile && <Image className='web' src={`/images/${project.mobile}`} width={100} height={200} objectFit='cover' ></Image>}
