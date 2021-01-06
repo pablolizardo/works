@@ -2,8 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 
 function Header() {
+    
     return (
-        <header>
+        <header >
             <Link href={'/'} >projects</Link>
             <Link href={'/repos'} >repos</Link>
             <Link href={'/me'} >about me</Link>

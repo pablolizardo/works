@@ -90,9 +90,10 @@ body {
 
 
 // LAYOUT 
-header {
+header , #header--fixed{
   grid-area: header;
   display: flex;
+  align-items: center;
   justify-content: center;
   a {
     display: inline-block;
@@ -104,6 +105,36 @@ header {
     color: var(--color-black);
     //  border-bottom: var(--border-width) solid var(--color-gray);
   }
+}
+#header--fixed {
+  z-index: 80;
+  position: fixed;
+  // top: 0;
+  left:0; right:0; 
+  background-color: white;
+  min-height: 70px;
+  top: -100px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,.03);
+}
+.slideIn { 
+  animation-name: slideIn; 
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+.slideOut { 
+  animation-name: slideOut; 
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+@keyframes slideIn {
+  from { top: -100px; }
+  to {top: 0px}
+}
+@keyframes slideOut {
+  to { top: -100px; }
+  from {top: 0px}
 }
 aside {
   grid-area: aside;
