@@ -26,7 +26,7 @@ const Project = (props) => {
             <h3 className='text-muted p-0 m-0'>{props.subtitle}</h3>
             <p className='p-0'>{props.description}</p>
 
-            {props.web && <Image className='web' src={`/images/${props.web}`} width={600} height={330} objectFit='cover' ></Image>}
+            {props.web && <Image className='web' src={`/images/${props.web}`} width={700} height={330} objectFit='contain' ></Image>}
 
         </div>
     );

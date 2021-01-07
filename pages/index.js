@@ -18,7 +18,7 @@ export default function Home(props) {
                 {project.tags.map( tag => <Badge>{tag}</Badge>)} </p>
               </div>
               <figure>
-                {project.web && <Image className='web' src={`/images/${project.web}`} width={250} height={130} objectFit='cover' ></Image>}
+                {project.web && <Image className='web' src={`/images/${project.web}`} width={270} height={130} objectFit='cover' ></Image>}
                 {project.mobile && <Image className='web' src={`/images/${project.mobile}`} width={100} height={200} objectFit='cover' ></Image>}
               </figure>
             </li>

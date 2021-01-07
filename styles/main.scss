@@ -210,6 +210,9 @@ ul.projects__list , ul.repos__list {
     box-shadow: 0px 0px 0px transparent;
     transition: border .3s, box-shadow .1s, opacity .2s;
     cursor: pointer;
+    figure {
+      max-width: 40%;
+    }
     &:hover{
       border : 1px solid transparent;
       box-shadow: 0px 0px 15px var(--color-gray-light);
