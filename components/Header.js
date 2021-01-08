@@ -5,9 +5,10 @@ function Header() {
     
     return (
         <header >
-            <Link href={'/'} >projects</Link>
-            <Link href={'/repos'} >repos</Link>
-            <Link href={'/me'} >about me</Link>
+            <Link href={'/'} >Projects</Link>
+            <Link href={'/blog'} >Blog</Link>
+            <Link href={'/repos'} >Repos</Link>
+            <Link href={'/me'} >About me</Link>
             {/* <Link href={'/'} >home</Link> */}
             {/* <Link href={'/contributions'} >contributions</Link> */}
         </header>

@@ -1,5 +1,7 @@
 .flex { display: flex; }
-.flex-col { flex-direction: column; }
+.flex-col { flex-direction: column;
+  flex-flow: column;
+}
 .flex-row { flex-direction: row; }
 .flex-wrap { flex-wrap: wrap; }
 .no-shrink { flex-shrink: 0; }
@@ -22,9 +24,18 @@
 .icon-xl { width: var(--icon-xl); height: var(--icon-xl); }
 .icon-lg { width: var(--icon-lg); height: var(--icon-lg); }
 
-.gap { gap: var(--space); }
-.gap-sm { gap: var(--space-sm); }
-.gap-xs { gap: var(--space-xs); }
+.gap { 
+  gap: var(--space); 
+
+}
+.gap-sm { 
+  gap: var(--space-sm); 
+ 
+}
+.gap-xs { 
+  gap: var(--space-xs); 
+
+}
 
 // WIDTHS
 .fifth { width: 20%; }
