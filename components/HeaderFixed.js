@@ -12,7 +12,7 @@ function HeaderFixed() {
             
             <img
                 src="/me.png"
-                alt="Picture of the author"
+                alt="Picture of Pablo Lizardo"
                 className='profile'
                 width={32}
                 height={32}

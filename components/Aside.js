@@ -9,7 +9,7 @@ function Aside() {
             <div>
                 <img
                     src="/me.png"
-                    alt="Picture of the author"
+                    alt="Picture of Pablo Lizardo"
                     className='profile'
                     width={180}
                     height={180}

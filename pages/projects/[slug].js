@@ -26,7 +26,8 @@ const Project = (props) => {
             <h3 className='text-muted p-0 m-0'>{props.subtitle}</h3>
             <p className='p-0'>{props.description}</p>
 
-            {props.web && <Image className='web' src={`/images/${props.web}`} width={700} height={330} objectFit='contain' ></Image>}
+            {props.web && <Image 
+            alt={project.title} className='web' src={`/images/${props.web}`} width={700} height={330} objectFit='contain' ></Image>}
             <p>
                 <a href={props.github_repo}>{props.github_repo}</a>
             </p>
