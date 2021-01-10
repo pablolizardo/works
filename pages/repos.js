@@ -8,8 +8,8 @@ const repos = (props) => {
             <main>
                 <ul className='repos__list'>
                     {props.data
-                        .map(repo =>
-                        <Link href={repo.html_url}  target="_blank">
+                        .map((repo,index) =>
+                        <Link href={repo.html_url}  target="_blank" key={index}>
                             <li>
                                 <div className='two-thirds'>
                                     <p className='m-0 p-0 '>{repo.name}</p>

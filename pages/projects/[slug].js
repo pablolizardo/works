@@ -10,7 +10,7 @@ const Project = (props) => {
             <div className='flex items-center  space-between items-center text-sm mb' >
                 <div className='flex gap items-center' style={{ marginLeft: `-2rem`}}>
                     <Link href='/' ><a className='back__link'>←</a></Link>
-                    {props.tags.map( tag => <Badge>{tag}</Badge>)}
+                    {props.tags.map( (tag,j) => <Badge key={j}>{tag}</Badge>)}
 
                 </div>
                 <div>
