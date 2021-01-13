@@ -33,7 +33,6 @@ export default repos;
 export const getStaticProps = async (ctx) => {
     const res = await fetch(`https://api.github.com/users/pablolizardo/repos`)
     const json = await res.json()
-    console.log(json)
     return {
         props: {
             data: json

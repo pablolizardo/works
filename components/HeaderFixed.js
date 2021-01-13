@@ -20,8 +20,10 @@ function HeaderFixed() {
             <p className='m-0 p-0' style={{ marginLeft: 'var(--space)' }}>Pablo Lizardo</p>
 
             <Link href={'/'} >projects</Link>
+            <Link href={'/blog'} >Blog</Link>
             <Link href={'/repos'} >repos</Link>
             <Link href={'/me'} >about me</Link>
+            <Link href={'/illustrations'} >Illustrations</Link>
             {/* <Link href={'/'} >home</Link> */}
             {/* <Link href={'/contributions'} >contributions</Link> */}
 

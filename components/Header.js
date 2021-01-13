@@ -9,6 +9,7 @@ function Header() {
             <Link href={'/blog'} >Blog</Link>
             <Link href={'/repos'} >Repos</Link>
             <Link href={'/me'} >About me</Link>
+            <Link href={'/illustrations'} >Illustrations</Link>
             {/* <Link href={'/'} >home</Link> */}
             {/* <Link href={'/contributions'} >contributions</Link> */}
         </header>
