@@ -6,7 +6,7 @@ function Header() {
     return (
         <header >
             <Link href={'/'} >Projects</Link>
-            <Link href={'/blog'} >Blog</Link>
+            {/* <Link href={'/blog'} >Blog</Link> */}
             <Link href={'/repos'} >Repos</Link>
             <Link href={'/me'} >About me</Link>
             <Link href={'/illustrations'} >Illustrations</Link>

@@ -196,6 +196,7 @@ img {
   border-radius: var(--border-radius);
 }
 .illustrations {
+  justify-content: space-between;
   gap : var(--space-sm);
   > div {
     box-shadow: 0px 0px 0px transparent;
