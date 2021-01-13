@@ -2,82 +2,111 @@
     {
         "title": "Reconmap Frontend",
         "slug": "reconmap",
-        "subtitle":"Open-source pentesting management and reporting platform",
-        "description":"Reconmap is an open source security tool for InfoSec professionals that allows them to plan, execute and document pentest and reconnaissance projects for multiple targets and clients",
-        "github_repo":"https://github.com/reconmap",
-        "link":"www.reconmap.com",
-        "web":"reconmap.png",
-        "tags": [ "CSS Arch","FrontEnd" ]
+        "subtitle": "Open-source pentesting management and reporting platform",
+        "description": "Reconmap is an open source security tool for InfoSec professionals that allows them to plan, execute and document pentest and reconnaissance projects for multiple targets and clients",
+        "github_repo": "https://github.com/reconmap",
+        "link": "www.reconmap.com",
+        "web": "reconmap.png",
+        "tags": [
+            "CSS Arch",
+            "FrontEnd"
+        ]
     },
     {
         "title": "Projects",
         "slug": "project",
-        "subtitle":"App to plan and track your dev projects in a timeline view",
-        "description":"",
-        "web":"projects_web.png",
-        "tags": [ "FrontEnd", "Backend", "CSS Arch" ]
-
+        "subtitle": "App to plan and track your dev projects in a timeline view",
+        "description": "",
+        "web": "projects_web.png",
+        "tags": [
+            "FrontEnd",
+            "Backend",
+            "CSS Arch"
+        ]
     },
     {
         "title": "Camino 🚕",
         "slug": "camino",
-        "subtitle":"Car rental open source solution ",
-        "description":"",
-        "link":"https://www.sendarenting.com.ar",
-        "web":"camino_web.png",
-        "tags": ["Backend" , "CSS Arch","FrontEnd",  "Mobile"]
-
+        "subtitle": "Car rental open source solution ",
+        "description": "",
+        "link": "https://www.sendarenting.com.ar",
+        "web": "camino_web.png",
+        "tags": [
+            "Backend",
+            "CSS Arch",
+            "FrontEnd",
+            "Mobile"
+        ]
     },
     {
         "title": "Viajero 📱",
         "slug": "viajero",
-        "subtitle":"Puzzle game created in godot engine",
-        "description":"The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
-         "web":"viajero_web.png",
-        "tags": [ "Game","3D"]
-
+        "subtitle": "Puzzle game created in godot engine",
+        "description": "The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
+        "web": "viajero_web.png",
+        "tags": [
+            "Game",
+            "3D"
+        ]
     },
     {
         "title": "SupperPlanner",
         "slug": "supper-planner",
-        "subtitle":"Plan yours weekly meals!",
-        "description":"The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
-         "web":"supper-planner_web.jpg",
-         "tags": [ "FrontEnd", "CSS Arch"]
+        "subtitle": "Plan yours weekly meals!",
+        "description": "The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
+        "web": "supper-planner_web.jpg",
+        "tags": [
+            "FrontEnd",
+            "CSS Arch"
+        ]
     },
     {
         "title": "Creamos",
         "slug": "creamos",
-        "subtitle":"Social Network to share faith!",
-        "description":"The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
-         "tags": [ "FrontEnd", "Backend" ,"CSS Arch"],
-         "web":"creamos.jpg"
+        "subtitle": "Social Network to share faith!",
+        "description": "The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
+        "tags": [
+            "FrontEnd",
+            "Backend",
+            "CSS Arch"
+        ],
+        "web": "creamos.jpg"
     },
     {
         "title": "CUO",
         "slug": "cuo",
-        "subtitle":"CUO Platform",
-        "private":true,
-        "description":"The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
-         "tags": [ "FrontEnd", "Backend" ,"CSS Arch"],
-         "web":"cuo.jpg"
+        "subtitle": "CUO Platform",
+        "private": true,
+        "description": "The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
+        "tags": [
+            "FrontEnd",
+            "Backend",
+            "CSS Arch"
+        ],
+        "web": "cuo.jpg"
     },
     {
         "title": "home",
         "slug": "home",
-        "subtitle":"home !",
-        "private":true,
-        "description":"The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
-         "tags": [ "FrontEnd", "CSS Arch", "Design"],
-         "web":"home.jpg"
+        "subtitle": "home !",
+        "private": true,
+        "description": "The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
+        "tags": [
+            "FrontEnd",
+            "CSS Arch",
+            "Design"
+        ],
+        "web": "home.jpg"
     },
     {
-        "title":"SaludTV",
-        "slug":"salud",
-        "subtitle":"salud TV",
-        "tags": [ "FrontEnd", "CSS Arch", "Design"],
-        "web":"saludtv.jpg"
+        "title": "SaludTV",
+        "slug": "salud",
+        "subtitle": "salud TV",
+        "tags": [
+            "FrontEnd",
+            "CSS Arch",
+            "Design"
+        ],
+        "web": "saludtv.jpg"
     }
-  
-
 ]
