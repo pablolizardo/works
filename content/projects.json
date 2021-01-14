@@ -6,7 +6,7 @@
         "description": "Reconmap is an open source security tool for InfoSec professionals that allows them to plan, execute and document pentest and reconnaissance projects for multiple targets and clients",
         "github_repo": "https://github.com/reconmap",
         "link": "www.reconmap.com",
-        "web": "reconmap.png",
+        "web": "reconmap.jpg",
         "tags": [
             "CSS Arch",
             "FrontEnd"
@@ -17,7 +17,7 @@
         "slug": "project",
         "subtitle": "App to plan and track your dev projects in a timeline view",
         "description": "",
-        "web": "projects_web.png",
+        "web": "projects_web.jpg",
         "tags": [
             "FrontEnd",
             "Backend",
@@ -30,7 +30,7 @@
         "subtitle": "Car rental open source solution ",
         "description": "",
         "link": "https://www.sendarenting.com.ar",
-        "web": "camino_web.png",
+        "web": "camino_web.jpg",
         "tags": [
             "Backend",
             "CSS Arch",
@@ -43,7 +43,7 @@
         "slug": "viajero",
         "subtitle": "Puzzle game created in godot engine",
         "description": "The game is called Viajero (means Traveller). It born from a series of illustrations I made a few months ago. We start doing this prototype for testing only, but now we are looking forward to get this game done (even if it take long time) The game is a platform 2d game, with physics , and puzzles (we love Graphics Adventures and games like Limbo and Machinarium) So, enough talk for the moment, I’ll post some concepts, videos and ilustrations. I hope you guys like it, and if not I will wait for your critics/comments/suggestions. ",
-        "web": "viajero_web.png",
+        "web": "viajero_web.jpg",
         "tags": [
             "Game",
             "3D"
