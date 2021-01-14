@@ -196,6 +196,11 @@ img {
   border-radius: var(--border-radius);
 }
 .illustrations {
+<<<<<<< HEAD
+=======
+  justify-content: space-between;
+  gap : var(--space-sm);
+>>>>>>> 7072b5147c545753995c92aba9e66e3d29c4d977
   > div {
     margin: var(--space-xs)!important;
     box-shadow: 0px 0px 0px transparent;
