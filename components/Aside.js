@@ -18,7 +18,7 @@ function Aside() {
                 <SocialMediaLinks />
                 <p>I'm Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also enjoy wireframing, <abbr title='User Interface'>UI</abbr>, <abbr title='User Experience'>UX</abbr>, and design in general.</p>
             </div>
-            <p className=' text-sm flex flex-wrap gap-sm two-thirds'>
+            <p className=' text-sm flex flex-wrap  two-thirds' id='badges'>
                 <Badge>Game</Badge>
                 <Badge>Backend</Badge>
                 <Badge>3D</Badge>

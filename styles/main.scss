@@ -148,6 +148,16 @@ aside {
     position: relative;
     left: calc( var(--space-lg) * -1 );
   }
+  #socialmedia {
+    > * {
+      margin-right: var(--space-xs);
+    }
+  }
+  #badges {
+    > * {
+      margin : var(--space-xs);
+    }
+  }
 }
 main {
   grid-area: main;
@@ -196,11 +206,6 @@ img {
   border-radius: var(--border-radius);
 }
 .illustrations {
-<<<<<<< HEAD
-=======
-  justify-content: space-between;
-  gap : var(--space-sm);
->>>>>>> 7072b5147c545753995c92aba9e66e3d29c4d977
   > div {
     margin: var(--space-xs)!important;
     box-shadow: 0px 0px 0px transparent;
