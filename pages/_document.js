@@ -5,11 +5,19 @@ class MyDocument extends Document {
         const initialProps = await Document.getInitialProps(ctx)
         return { ...initialProps }
     }
-
     render() {
         return (
             <Html lang="en">
                 <Head>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NY4R3KG75J"></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', 'G-NY4R3KG75J');`
+                            }}
+                    />
                     <meta
                         name="description"
                         content="Personal Site of Pablo Lizardo"
