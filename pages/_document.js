@@ -23,7 +23,6 @@ class MyDocument extends Document {
                         content="Personal Site of Pablo Lizardo"
                         key='description'
                     />
-                    <title>Pablo Lizardo 👨‍💻</title>
                     <meta name="title" content="Pablo Lizardo 👨‍💻"/>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
@@ -33,13 +32,13 @@ class MyDocument extends Document {
                     <meta property="og:url" content="https://pablolizardo.com/"/>
                     <meta property="og:title" content="Pablo Lizardo 👨‍💻"/>
                     <meta property="og:description" content="Fullstack developer and Graphic Designer at http://tvfuego.com | Owner at http://soki.com.ar | #Laravel #b3d #reactjs #inkscape #tailwindcss #vuejs #godotengine"/>
-                    <meta property="og:image" content="/images/illustrations/viajero/viajero_4_compo.png"/>
+                    <meta property="og:image" content="https://pablolizardo.com/images/illustrations/viajero/0000.png"/>
 
                     <meta property="twitter:card" content="summary_large_image"/>
                     <meta property="twitter:url" content="https://pablolizardo.com/"/>
                     <meta property="twitter:title" content="Pablo Lizardo 👨‍💻"/>
                     <meta property="twitter:description" content="Fullstack developer and Graphic Designer at http://tvfuego.com | Owner at http://soki.com.ar | #Laravel #b3d #reactjs #inkscape #tailwindcss #vuejs #godotengine"/>
-                    <meta property="twitter:image" content="/images/illustrations/viajero/viajero_4_compo.png"></meta>
+                    <meta property="twitter:image" content="https://pablolizardo.com/images/illustrations/viajero/0000.png"></meta>
                 </Head>
                 <body>
                     <Main />
