@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import Head from 'next/head'
 const fs = require('fs')
 const path = require('path')
 
@@ -9,6 +10,9 @@ function illustration({ images }) {
     const handleCloseModal = () => { setShowModal() }
     return (
         <div>
+            <Head>
+                <title key='title'>Illustrations 👨‍💻</title>
+            </Head>
             <h1>Illustrations</h1>
             {showModal &&
                 <div id="backdrop" onClick={handleCloseModal}>
