@@ -3,10 +3,14 @@ import Link from 'next/link';
 import Badge from '../../components/Badge';
 
 const projects = require('./../../content/projects.json')
+import Head from 'next/head'
 
 const Project = (props) => {
     return (
         <div>
+        <Head>
+                <title key='title'>{props.title} 👨‍💻</title>
+            </Head>
             <div className='flex items-center  space-between items-center text-sm mb' >
                 <div className='flex gap items-center' style={{ marginLeft: `-2rem` }}>
                     <Link href='/' ><a className='back__link'>←</a></Link>

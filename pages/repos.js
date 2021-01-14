@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Badge from "../components/Badge"
-
+import Head from 'next/head'
 const repos = (props) => {
     return (
         <div>
+        <Head>
+                <title key='title'>Repos 👨‍💻</title>
+            </Head>
             <h1>Repos</h1>
             <main>
                 <ul className='repos__list'>

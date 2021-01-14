@@ -21,8 +21,9 @@ class MyDocument extends Document {
                     <meta
                         name="description"
                         content="Personal Site of Pablo Lizardo"
+                        key='description'
                     />
-
+                    <title key='title'>Pablo Lizardo 👨‍💻</title>
                 </Head>
                 <body>
                     <Main />
