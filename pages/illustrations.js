@@ -19,14 +19,14 @@ function illustration({ images }) {
                     <img src={showModal} className='backdrop__image' />
                 </div>
             }
-            <getSelection>
                 <h2>The Wind</h2>
                 <div className='flex flex-wrap illustrations'>
+                    <img src='/open.png' width={120}  id='open'/>
+
                     {images['The Wind'].map((image, index) =>
                         <Image onClick={() => handleOpenModal(`/images/illustrations/The Wind/${image}`)} className='illustration' key={`The Wind-${index}`} src={`/images/illustrations/The Wind/${image}`} width='128' height='128' objectFit='cover' />
                     )}
                 </div>
-            </getSelection>
             { Object.keys(images)
                 .filter( folder => folder !== 'The Wind')
                 .map(folder =>

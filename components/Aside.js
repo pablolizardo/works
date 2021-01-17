@@ -14,7 +14,9 @@ function Aside() {
                     width={180}
                     height={180}
                 />
-                <h2>Pablo Lizardo</h2>
+                <h2 style={{ position: 'relative' }}>
+                    <img src='/arrow.png' height={120} id='arrow' />Pablo Lizardo
+                </h2>
                 <SocialMediaLinks />
                 <p>I'm Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also enjoy wireframing, <abbr title='User Interface'>UI</abbr>, <abbr title='User Experience'>UX</abbr>, and design in general.</p>
             </div>

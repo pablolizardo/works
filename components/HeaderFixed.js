@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
+import links from '../content/links'
 
 function HeaderFixed() {
     const headerRef = useRef()
@@ -19,13 +20,8 @@ function HeaderFixed() {
             />
             <p className='m-0 p-0' style={{ marginLeft: 'var(--space)' }}>Pablo Lizardo</p>
 
-            <Link href={'/'} >projects</Link>
-            {/* <Link href={'/blog'} >Blog</Link> */}
-            <Link href={'/repos'} >repos</Link>
-            <Link href={'/me'} >about me</Link>
-            <Link href={'/illustrations'} >Illustrations</Link>
-            {/* <Link href={'/'} >home</Link> */}
-            {/* <Link href={'/contributions'} >contributions</Link> */}
+            {links.map( (link,index) => <Link key={index} href={link.path}>{link.title}</Link> )}
+
 
         </div>
     )

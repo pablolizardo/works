@@ -7,10 +7,12 @@ export default function Home(props) {
   return (
     <div>
       <h1>Projects 👨‍💻</h1>
-      <ul className='projects__list'>
+      <ul className='projects__list' style={{ position:'relative'}}>
+              <img src='/open.png' width={120}  id='open'/>
         {PROJECTS.map((project,index) =>
           <Link href={`/projects/${project.slug}`} key={index}>
-            <li>
+            <li >
+
               <div>
                 <h2 className='m-0 p-0'>{project.title}</h2>
                 <p className='text-muted text-sm m-0 '>{project.subtitle}</p>

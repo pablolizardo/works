@@ -16,6 +16,9 @@
       height: initial;
       align-items: center;
       grid-template-columns: 150px 1fr;
+      #arrow { 
+        display: none;
+      }
       img{
         width: 120px;
         height: 120px;

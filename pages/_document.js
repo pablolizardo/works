@@ -24,7 +24,6 @@ class MyDocument extends Document {
                         key='description'
                     />
                     <meta name="title" content="Pablo Lizardo 👨‍💻"/>
-                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
                     <meta name="description" content="Fullstack developer and Graphic Designer at http://tvfuego.com | Owner at http://soki.com.ar | #Laravel #b3d #reactjs #inkscape #tailwindcss #vuejs #godotengine"/>
 
