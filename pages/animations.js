@@ -27,7 +27,8 @@ function animations({ videos }) {
                 {[...new Set(videos)]
                     .sort((a, b) => b < a)
                     .map((video, index) =>
-                        <video key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        <video key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} preload playsinline 
+                        poster={'/images/animations/' + video + '.jpg'}>
                             <source src={'/images/animations/' + video + '.webm'} type="video/webm"></source>
                             <source src={'/images/animations/' + video + '.mp4'} type="video/mp4"></source>
                         </video>
@@ -48,7 +49,7 @@ export const getStaticProps = async () => {
     return {
         props: {
             videos: videos
-                .map(video => video.replace('.mp4', '').replace('.webm', ''))
+                .map(video => video.replace('.mp4', '').replace('.webm', '').replace('.jpg', ''))
                 .filter(video => video != '.DS_Store')
 
         }

@@ -10,6 +10,9 @@
       min-height: auto;
       gap: var(--space-sm);
     }
+    #animations { 
+      grid-template-columns: repeat(2,1fr);
+    }
     aside {
       margin-top: var(--space-lg);
       display: grid;
