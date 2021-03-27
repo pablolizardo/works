@@ -1,0 +1,13 @@
+.container {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity .1s;
+
+ 
+
+}
+.container:hover{
+    opacity: .8;
+  }

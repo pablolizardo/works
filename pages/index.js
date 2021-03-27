@@ -1,32 +1,33 @@
-const PROJECTS = require('./../content/projects.json')
-import Image from 'next/image'
-import Link from 'next/link'
-import Badge from './../components/Badge'
+import WorkLink from '../components/WorkLink';
+import styles from './projects.module.scss';
 
 export default function Home(props) {
+  if (!props.data.items) return 'Error';
   return (
     <div>
       <h1>Projects 👨‍💻</h1>
-      <ul className='projects__list' style={{ position:'relative'}}>
-              <img src='/open.png' width={120}  id='open'/>
-        {PROJECTS.map((project,index) =>
-          <Link href={`/projects/${project.slug}`} key={index}>
-            <li >
-
-              <div>
-                <h2 className='m-0 p-0'>{project.title}</h2>
-                <p className='text-muted text-sm m-0 '>{project.subtitle}</p>
-                <p className='m-0 pt text-sm flex gap gap-sm items-center'>
-                {project.tags.map( (tag,j) => <Badge key={j}>{tag}</Badge>)} </p>
-              </div>
-              <figure>
-                {project.web && <Image className='web' alt={project.title} src={`/images/${project.web}`} width={270} height={130} objectFit='cover' ></Image>}
-                {project.mobile && <Image className='web' alt={project.title} src={`/images/${project.mobile}`} width={100} height={200} objectFit='cover' ></Image>}
-              </figure>
-            </li>
-          </Link>
-        )}
+      <ul className={styles.list}>
+        {/* <img src="/open.png" width={120} className={styles.open} /> */}
+        {props.data.items.map((project, index) => (
+          <WorkLink project={project} key={index} />
+        ))}
       </ul>
     </div>
-  )
+  );
 }
+const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+const client = require('contentful').createClient({
+  space: space,
+  accessToken: accessToken,
+});
+export const getServerSideProps = async (ctx) => {
+  const works = await client.getEntries({
+    content_type: 'coding',
+  });
+  return {
+    props: {
+      data: works,
+    },
+  };
+};

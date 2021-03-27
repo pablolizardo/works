@@ -1,34 +1,31 @@
-import React from 'react'
-import Image from 'next/image'
-import Badge from './Badge'
-import SocialMediaLinks from './SocialMediaLinks'
-
+import React from 'react';
+import Image from 'next/image';
+import SocialMediaLinks from './SocialMediaLinks';
+import styles from './Aside.module.scss';
+import BadgesList from './BadgesList';
 function Aside() {
-    return (
-        <aside>
-            <div>
-                <img
-                    src="/me.png"
-                    alt="Picture of Pablo Lizardo"
-                    className='profile'
-                    width={180}
-                    height={180}
-                />
-                <h2 style={{ position: 'relative' }}>
-                    <img src='/arrow.png' height={120} id='arrow' />Pablo Lizardo
-                </h2>
-                <SocialMediaLinks />
-                <p>I'm Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also enjoy wireframing, <abbr title='User Interface'>UI</abbr>, <abbr title='User Experience'>UX</abbr>, and design in general.</p>
-            </div>
-            <p className=' text-sm flex flex-wrap  two-thirds' id='badges'>
-                <Badge>Game</Badge>
-                <Badge>Backend</Badge>
-                <Badge>3D</Badge>
-                <Badge>CSS Arch</Badge>
-                <Badge>FrontEnd</Badge>
-            </p>
-        </aside>
-    )
+  return (
+    <aside className={styles.container}>
+      <div className={styles.info}>
+        <div className={styles.image}>
+          <Image src="/me.png" alt="Picture of Pablo Lizardo" width={180} height={180} className={styles.foto}     />
+        </div>
+        <h2 className={styles.title}>
+          {/* <img src="/arrow.png" height={120} className={styles.arrow} /> */}
+          Pablo Lizardo
+        </h2>
+        <SocialMediaLinks />
+        <p className={styles.paragraph}>
+          I'm Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also
+          enjoy wireframing, <abbr title="User Interface">UI</abbr>, <abbr title="User Experience">UX</abbr>, and design in general.
+        </p>
+      </div>
+      <p className={styles.badges}>
+
+      <BadgesList tags={['Game', 'Backend', '3D', 'CSS Arch', 'FrontEnd']} />
+        </p>
+    </aside>
+  );
 }
 
-export default Aside
+export default Aside;

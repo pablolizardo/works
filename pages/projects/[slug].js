@@ -1,61 +1,86 @@
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Badge from '../../components/Badge';
+import BadgesList from '../../components/BadgesList';
+import SocialShare from '../../components/SocialShare';
+import styles from './work.module.scss';
+const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
-const projects = require('./../../content/projects.json')
-import Head from 'next/head'
-
-const Project = (props) => {
-    return (
-        <div>
-        <Head>
-                <title key='title'>{props.title} 👨‍💻</title>
-            </Head>
-            <div className='flex items-center  space-between items-center text-sm mb' >
-                <div className='flex gap items-center' style={{ marginLeft: `-2rem` }}>
-                    <Link href='/' ><a className='back__link'>←</a></Link>
-                    {props.tags.map((tag, j) => <Badge key={j}>{tag}</Badge>)}
-
-                </div>
-                <div>
-                    <button className='button--primary flex gap items-center'>
-                        Tweet
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter" viewBox="0 0 16 16">
-                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <h1 className='p-0 m-0'>{props.title}</h1>
-            <h3 className='text-muted p-0 m-0'>{props.subtitle}</h3>
-            <p className='p-0'>{props.description}</p>
-
-            {props.web && <Image
-                alt={props.title} className='web' src={`/images/${props.web}`} width={700} height={330} objectFit='contain' ></Image>}
-            <p>
-                <a href={props.github_repo}>{props.github_repo}</a>
-            </p>
-
+const client = require('contentful').createClient({
+  space: space,
+  accessToken: accessToken,
+});
+const Project = (work) => {
+  return (
+    <div>
+      <Head>
+        <title key="title">{work.fields.title} 👨‍💻</title>
+      </Head>
+      <div className={styles.header}>
+        <Link href="/">
+          <a className={styles.backButton}>←</a>
+        </Link>
+        <div className={styles.badges}>
+          {work.fields.hashtags && <BadgesList tags={work.fields.hashtags} />}
         </div>
-    );
-}
+
+        <SocialShare
+          title={work.fields.title}
+          subtitle={work.fields.subtitle || ''}
+          description={work.fields.description}
+          url={`https://www.pablolizardo.com.ar/works/${work.fields.slug}`}
+          img={'https:' + work.fields.image.fields.file.url}
+        />
+      </div>
+      <h1 className="p-0 m-0">{work.fields.title}</h1>
+      <h3 className="text-muted p-0 m-0">{work.fields.subtitle}</h3>
+      <p className="p-0" dangerouslySetInnerHTML={{ __html: documentToHtmlString(work.fields.description) }} />
+
+      <div className={styles.featuredImage}>
+        {work.fields.image && <Image alt={work.fields.title} src={`https:${work.fields.image.fields.file.url}`} width={600} height={330} layout="responsive" objectFit="contain"></Image>}
+      </div>
+
+      <p>
+        <a href={work.fields.github_repo}>{work.fields.github_repo}</a>
+      </p>
+      <div className={styles.images}>
+        {work.fields.images &&
+          work.fields.images.map((image) => (
+            <div className={styles.image}>
+              <Image alt={image.fields.title} src={`https:${image.fields.file.url}`} key={image.sys.id} width={200} height={160} objectFit="contain" layout='responsive'/>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+};
 
 export const getStaticPaths = async (ctx) => {
 
-    return {
-        paths: projects.map((project) => {
-            return {
-                params: {
-                    slug: project.slug
-                }
-            }
-        }),
-        fallback: false
-    }
-}
+  const works = await client.getEntries({
+    content_type: 'coding',
+  });
+  return {
+    paths: works.items.map((project) => {
+      return {
+        params: {
+          slug: project.fields.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+};
 
 export async function getStaticProps({ params }) {
-    return { props: projects.find(project => project.slug === params.slug) }
+  const works = await client.getEntries({
+    content_type: 'coding',
+  });
+  return {
+    props: works.items.find((work) => work.fields.slug === params.slug),
+  };
 }
 
 export default Project;

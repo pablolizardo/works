@@ -1,0 +1,17 @@
+  .container {
+   text-align: center;
+    grid-area: aside;
+    grid-template-columns: 150px 1fr;
+  }
+  .paragraph, .badges{
+    display: none;
+  }
+@media screen and (min-width: 768px) {
+  .container{
+   text-align: left;
+
+  }
+  .paragraph, .badges{
+    display: block;
+  }
+}

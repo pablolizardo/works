@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import styles from './animations.module.scss';
 
 function animations({ videos }) {
     const handleMouseEnter = e => {
@@ -20,22 +21,28 @@ function animations({ videos }) {
     }
 
     return (
-        <div >
-            <h1>Animations</h1>
-            <div id='animations' >
-            <img src='/play.png' width={140}  id='play'/>
-                {[...new Set(videos)]
-                    .sort((a, b) => b < a)
-                    .map((video, index) =>
-                        <video key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} preload playsinline 
-                        poster={'/images/animations/' + video + '.jpg'}>
-                            <source src={'/images/animations/' + video + '.webm'} type="video/webm"></source>
-                            <source src={'/images/animations/' + video + '.mp4'} type="video/mp4"></source>
-                        </video>
-                    )}
-            </div>
+      <div>
+        <h1>Animations</h1>
+        <div className={styles.container}>
+          <img src="/play.png" width={140} className={styles.play} />
+          {[...new Set(videos)]
+            .sort((a, b) => b < a)
+            .map((video, index) => (
+              <video
+                key={index}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                preload
+                playsinline
+                poster={'/images/animations/' + video + '.jpg'}
+              >
+                <source src={'/images/animations/' + video + '.webm'} type="video/webm"></source>
+                <source src={'/images/animations/' + video + '.mp4'} type="video/mp4"></source>
+              </video>
+            ))}
         </div>
-    )
+      </div>
+    );
 }
 
 export default animations

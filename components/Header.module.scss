@@ -1,0 +1,37 @@
+.container {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    a {
+      display: block;
+      padding: var(--space);
+      color: var(--color-gray);
+      border-bottom : var(--border-width) dotted transparent;
+    }
+   
+    a:hover {
+      color: var(--color-black);
+    }
+  }
+@media screen and (min-width: 768px) {
+  .container {
+    grid-area: header;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      display: inline-block;
+      padding: var(--space-sm) var(--space);
+      color: var(--color-gray);
+      border-bottom : var(--border-width) dotted transparent;
+    }
+    a:hover {
+      color: var(--color-black);
+      //  border-bottom: var(--border-width) solid var(--color-gray);
+    }
+  }
+}
