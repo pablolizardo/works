@@ -13,23 +13,24 @@ const client = require('contentful').createClient({
   accessToken: accessToken,
 });
 const Project = (work) => {
+  const tags = work.fields.hashtags ? work.fields.hashtags.map(tag => `#${tag} `) : ' #dev #coding'
   return (
     <div>
       <Head>
         <title key="title">{work.fields.title} | Pablo Lizardo 👨‍💻</title>
         <meta name="description" content={work.fields.subtitle} key="description" />
         <meta name="title" content={work.fields.title + " Pablo Lizardo"} />
-        <meta name="description" content={work.fields.subtitle + ' ' +work.fields.hashtags.map(tag => `#${tag} `)} />
+        <meta name="description" content={work.fields.subtitle + ' ' + tags} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://pablolizardo.com/projects/${work.fields.slug}`} />
         <meta property="og:title" content={work.fields.title + " | Pablo Lizardo"} />
-        <meta property="og:description" content={work.fields.subtitle + ' ' +work.fields.hashtags.map(tag => `#${tag} `)} />
+        <meta property="og:description" content={work.fields.subtitle + ' ' + tags} />
         <meta property="og:image" content={'https:' + work.fields.image.fields.file.url} />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={`https://pablolizardo.com/projects/${work.fields.slug}`} />
         <meta property="twitter:title" content={work.fields.title + " | Pablo Lizardo"} />
-        <meta property="twitter:description" content={work.fields.subtitle + ' ' +work.fields.hashtags.map(tag => `#${tag} `)} />
+        <meta property="twitter:description" content={work.fields.subtitle + ' ' + tags} />
         <meta property="twitter:image" content={'https:' + work.fields.image.fields.file.url}></meta>
       </Head>
       <h1 className={styles.title}>{work.fields.title}</h1>
@@ -46,7 +47,7 @@ const Project = (work) => {
           description={work.fields.description}
           url={`https://www.pablolizardo.com.ar/works/${work.fields.slug}`}
           img={'https:' + work.fields.image.fields.file.url}
-          tags={work.fields.hashtags.map(tag => tag+',')}
+          tags={work.fields.hashtags ? work.fields.hashtags.map(tag => tag+',') :'dev,coding'}
         />
       </div>
       <p className="p-0" dangerouslySetInnerHTML={{ __html: documentToHtmlString(work.fields.description) }} />
