@@ -1,27 +1,48 @@
 import React from 'react'
 import styles from './Badge.module.css';
-function Badge({children, color}) {
+function Badge({children:label, color}) {
     const colors = {
       '': 'gray',
-      Game: 'red',
-      Backend: 'purple',
-      '3D': 'green',
+      'CSS': 'yellow',
       'CSS Arch': 'yellow',
+      'CSS Modules': 'yellow',
+      Backend: 'purple',
       FrontEnd: 'blue',
       Mobile: 'teal',
-      'CSS Modules': 'green',
+      React: 'teal',
       ReactJS: 'teal',
+      Figma: 'gray',
+      NextJS: 'blue',
+      laravel: 'red',
+      Godot: 'blue',
+      vue: 'teal',
+      vueJS: 'teal',
+      tailwind: 'green',
+      tailwindcss: 'green',
+      mysql: 'pink',
+      Game: 'red',
+      Blender: 'orange',
+      b3d: 'orange',
+      '3D': 'green',
+      phaser: 'gray'
+
     };
-    
+    const newcolor = Object
+      .entries(colors)
+      .find(([nam]) => nam.toLowerCase().indexOf(label.toLowerCase()) > -1 ) ? 
+      Object
+      .entries(colors)
+      .find(([nam]) => nam.toLowerCase().indexOf(label.toLowerCase()) > -1 )[1]
+      : 'gray'
     return (
       <span
         className={styles.container}
         style={{
-          backgroundColor: `var(--color-${color || colors[children]}-light)`,
-          color: `var(--color-${color || colors[children]})`,
+          backgroundColor: `var(--color-${newcolor}-light)`,
+          color: `var(--color-${newcolor})`,
         }}
       >
-        {children}
+        {label}
       </span>
     );
 }

@@ -2,12 +2,12 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './SocialShare.module.scss';
 
-function SocialShare({ title, subtitle, description, url, img }) {
-  const pinterest = false;
+function SocialShare({ title, subtitle, description, url, img, tags = 'dev,webdev,code' }) {
+  const pinterest = true;
   return (
     <div className={styles.container}>
-      <Link href={`http://twitter.com/share?text=${description}&url=${url}&hashtags=mujeres,riogrande,centenario`}>
-        <a target="_blank" rel="noreferer" className={styles.link} href={`http://twitter.com/share?text=${description}&url=${url}&hashtags=mujeres,riogrande,centenario`}>
+      <Link href={`http://twitter.com/share?text=${title}&url=${url}&hashtags=${tags}`}>
+        <a target="_blank" rel="noreferer" className={styles.link} href={`http://twitter.com/share?text=${title}&url=${url}&hashtags=${tags}`}>
           <svg viewBox="0 0 23 20" fill="none">
             <path
               d="M22 1.29543C21.0647 1.97303 20.5174 2.20594 19.4214 2.54489C18.8331 1.85023 18.0513 1.35787 17.1818 1.1344C16.3122 0.910937 15.3967 0.967149 14.5592 1.29543C13.7218 1.62372 13.0027 2.20824 12.4992 2.96994C11.9957 3.73163 11.7322 4.63376 11.7442 5.55431V6.55744C10.0277 6.60315 8.32683 6.21218 6.79308 5.41933C5.25933 4.62648 3.94031 3.45638 2.95349 2.01323C2.95349 2.01323 -0.953488 11.0415 7.83721 15.054C5.82563 16.4564 3.42932 17.1595 1 17.0603C9.7907 22.076 20.5349 17.0603 20.5349 5.52421C20.534 5.24479 20.5078 4.96606 20.4567 4.69161C21.4536 3.68194 21.6687 2.69252 22 1.29543Z"
