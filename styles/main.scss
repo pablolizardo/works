@@ -75,9 +75,10 @@ body {
 }
 
 #root {
+  display: grid;
   grid-template-areas:
-    'header header'
     'aside aside'
+    'header header'
     'main main'
     'footer footer';
   grid-template-columns: 1fr;
@@ -113,11 +114,7 @@ main {
   grid-area: main;
   // border:1px solid red;
 }
-footer {
-  text-align: center;
-  // border:1px solid blue;
-  grid-area: footer;
-}
+
 
 // TYPOGRAPHY
 h1,
@@ -130,17 +127,11 @@ h6 {
   font-weight: normal;
 }
 h1 {
-  padding-top: var(--space-lg);
+  margin : var(--space) 0;
   font-weight: 800;
   font-size: var(--text-xl);
-  // font-size: calc(3vw + 3vh + .3rem);;
 }
-@media screen and (min-width: 768px) {
-  h1 {
-    margin-top: 0;
-    padding-top: 0;
-  }
-}
+
 h2 {
   padding-top: var(--space-lg);
   font-weight: 700;

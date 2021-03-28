@@ -7,7 +7,10 @@ function Header() {
     <header className={styles.container}>
       {links.map((link, index) => (
         <Link key={index} href={link.path}>
-          {link.title}
+          <a>
+            <span className="desktop">{link.title}</span>
+            <span className="mobile">{link.abbr}</span>
+          </a>
         </Link>
       ))}
     </header>

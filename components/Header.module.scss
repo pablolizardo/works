@@ -7,11 +7,11 @@
     justify-content: center;
     a {
       display: block;
-      padding: var(--space);
+      padding: var(--space-sm) ;
       color: var(--color-gray);
       border-bottom : var(--border-width) dotted transparent;
     }
-   
+  //  margin: var(--space) var(--space-sm);
     a:hover {
       color: var(--color-black);
     }
@@ -23,6 +23,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+   margin:0;
+
     a {
       display: inline-block;
       padding: var(--space-sm) var(--space);

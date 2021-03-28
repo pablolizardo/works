@@ -101,3 +101,24 @@
 .mx-auto { margin: auto; }
 .ml-auto { margin-left: auto; }
 .mr-auto { margin-right: auto; }
+
+
+
+
+.desktop {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .desktop {
+    display: initial;
+  }
+}
+
+.mobile {
+  display: initial;
+}
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}

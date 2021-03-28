@@ -13,13 +13,15 @@ function HeaderFixed() {
       <Link href="/" passHref>
         <a className={styles.name}>
           <img src="/me.png" alt="Picture of Pablo Lizardo" className={styles.profile} width={32} height={32} />
-          <span>Pablo Lizardo</span>
         </a>
       </Link>
 
       {links.map((link, index) => (
         <Link key={index} href={link.path} passHref>
-          <a>{link.title}</a>
+          <a>
+            <span className='desktop'>{link.title}</span>
+            <span className='mobile'>{link.abbr}</span>
+          </a>
         </Link>
       ))}
     </div>

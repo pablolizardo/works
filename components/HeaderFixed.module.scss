@@ -7,11 +7,11 @@
   position: fixed;
   left: 0;
   right: 0;
-  background-color: white;
-  min-height: 70px;
+  background-color: rgba(255,255,255,.98);
+  // min-height: 70px;
   top: -100px;
-  padding: var(--space);
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.03);
+  padding: var(--space-sm);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   .name{
     display: flex;
     align-items: center;
@@ -26,6 +26,8 @@
   a {
     display: inline-block;
     padding: var(--space-sm) ;
+    // font-size: var(--text-xs);
+    // font-size: var(--text-sm);
     color: var(--color-gray);
     border-bottom: var(--border-width) dotted transparent;
   }
@@ -35,8 +37,11 @@
 }
 @media screen and (min-width: 768px) {
   .container {
+    padding: var(--space);
+
     a {
       padding: var(--space-sm) var(--space);
+      font-size: var(--text-base);
     }
   }
 }

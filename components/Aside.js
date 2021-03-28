@@ -14,7 +14,9 @@ function Aside() {
           {/* <img src="/arrow.png" height={120} className={styles.arrow} /> */}
           Pablo Lizardo
         </h2>
-        <SocialMediaLinks />
+        <div className={styles.social}>
+          <SocialMediaLinks />
+        </div>
         <p className={styles.paragraph}>
           I'm Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also
           enjoy wireframing, <abbr title="User Interface">UI</abbr>, <abbr title="User Experience">UX</abbr>, and design in general.
