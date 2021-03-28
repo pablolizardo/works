@@ -19,17 +19,17 @@ const Project = (work) => {
       <Head>
         <title key="title">{work.fields.title} | Pablo Lizardo 👨‍💻</title>
         <meta name="description" content={work.fields.subtitle} key="description" />
-        <meta name="title" content={work.fields.title + " Pablo Lizardo"} />
+        <meta name="title" content={work.fields.title + ' Pablo Lizardo'} />
         <meta name="description" content={work.fields.subtitle + ' ' + tags} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://pablolizardo.com/projects/${work.fields.slug}`} />
-        <meta property="og:title" content={work.fields.title + " | Pablo Lizardo"} />
+        <meta property="og:title" content={work.fields.title + ' | Pablo Lizardo'} />
         <meta property="og:description" content={work.fields.subtitle + ' ' + tags} />
         <meta property="og:image" content={'https:' + work.fields.image.fields.file.url} />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={`https://pablolizardo.com/projects/${work.fields.slug}`} />
-        <meta property="twitter:title" content={work.fields.title + " | Pablo Lizardo"} />
+        <meta property="twitter:title" content={work.fields.title + ' | Pablo Lizardo'} />
         <meta property="twitter:description" content={work.fields.subtitle + ' ' + tags} />
         <meta property="twitter:image" content={'https:' + work.fields.image.fields.file.url}></meta>
       </Head>
@@ -45,9 +45,9 @@ const Project = (work) => {
           title={work.fields.title}
           subtitle={work.fields.subtitle || ''}
           description={work.fields.description}
-          url={`https://www.pablolizardo.com.ar/works/${work.fields.slug}`}
+          url={`https://www.pablolizardo.com/projects/${work.fields.slug}`}
           img={'https:' + work.fields.image.fields.file.url}
-          tags={work.fields.hashtags ? work.fields.hashtags.map(tag => tag+',') :'dev,coding'}
+          tags={work.fields.hashtags ? work.fields.hashtags.map((tag) => tag + ',') : 'dev,coding'}
         />
       </div>
       <p className="p-0" dangerouslySetInnerHTML={{ __html: documentToHtmlString(work.fields.description) }} />
