@@ -1,80 +1,68 @@
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Head from 'next/head'
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Head from 'next/head';
 import styles from './illustrations.module.scss';
-const fs = require('fs')
-const path = require('path');
-function illustration({ images }) {
-    const [showModal, setShowModal] = useState()
-    const handleOpenModal = (filename) => { setShowModal(filename) }
-    const handleCloseModal = () => { setShowModal() }
-    return (
-      <div >
-        <Head>
-          <title key="title">Illustrations 👨‍💻</title>
-        </Head>
-        <h1>Illustrations</h1>
-        {showModal && (
-          <div id="backdrop" onClick={handleCloseModal}>
-            <img src={showModal} className="backdrop__image" />
-          </div>
-        )}
-        <h2>The Wind</h2>
-        <div className={styles.container}>
-          <img src="/open.png" width={120} className={styles.open} />
 
-          {images['The Wind'].map((image, index) => (
-            <Image
-              onClick={() => handleOpenModal(`/images/illustrations/The Wind/${image}`)}
-              className="illustration"
-              key={`The Wind-${index}`}
-              src={`/images/illustrations/The Wind/${image}`}
-              width="128"
-              height="128"
-              objectFit="cover"
-            />
-          ))}
+function illustration(props) {
+  const [showModal, setShowModal] = useState();
+  const handleOpenModal = (filename) => {
+    setShowModal(filename);
+  };
+  const handleCloseModal = () => {
+    setShowModal();
+  };
+  const collections = [...new Set(props.data.items.map((image) => image.fields.collection[0]))];
+  return (
+    <div>
+      <Head>
+        <title key="title">Illustrations 👨‍💻</title>
+      </Head>
+      <h1>Illustrations</h1>
+      {showModal && (
+        <div id="backdrop" onClick={handleCloseModal}>
+          <img src={showModal} className="backdrop__image" />
         </div>
-        {Object.keys(images)
-          .filter((folder) => folder !== 'The Wind')
-          .map((folder) => (
-            <section key={folder}>
-              <h2>{folder}</h2>
-              <div className={styles.container}>
-                {images[folder].map((image, index) => (
-                  <Image
-                    onClick={() => handleOpenModal(`/images/illustrations/${folder}/${image}`)}
-                    className="illustration"
-                    key={`${folder}-${index}`}
-                    src={`/images/illustrations/${folder}/${image}`}
-                    width="64"
-                    height="64"
-                    objectFit="cover"
-                  />
-                ))}
-              </div>
-            </section>
-          ))}
-      </div>
-    );
+      )}
+      {collections.map((collection) => (
+        <>
+          <h2>{collection}</h2>
+          <div className={styles.container}>
+            {props.data.items
+              .filter((image) => image.fields.collection.includes(collection))
+              .map((image, index) => (
+                <Image
+                  onClick={() => handleOpenModal('https:' + image.fields.image.fields.file.url)}
+                  className="illustration"
+                  key={image.fields.title}
+                  src={'https:' + image.fields.image.fields.file.url}
+                  width="128"
+                  height="128"
+                  objectFit="cover"
+                />
+              ))}
+          </div>
+        </>
+      ))}
+    </div>
+  );
 }
 
-export default illustration
+export default illustration;
 
-
-export async function getStaticProps() {
-    const categories = fs.readdirSync(path.join(process.cwd(), '/public/images/illustrations'))
-    let tmp = []
-    let images = {}
-
-    categories
-        .filter(category => category != '.DS_Store')
-        .forEach(category => {
-            tmp = fs.readdirSync(path.join(process.cwd(), `/public/images/illustrations/${category}`))
-            images[category] = tmp.filter(image => image != '.DS_Store')
-        })
-
-    return {
-        props: { images },
-    };
-}
+const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+const client = require('contentful').createClient({
+  space: space,
+  accessToken: accessToken,
+});
+export const getServerSideProps = async (ctx) => {
+  const illustrations = await client.getEntries({
+    content_type: 'illustration',
+  });
+  // console.log(illustrations.items[0].fields.collection)
+  return {
+    props: {
+      data: illustrations,
+    },
+  };
+};
