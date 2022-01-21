@@ -2,8 +2,8 @@ import Head from 'next/head';
 import WorkLink from '../components/WorkLink';
 import styles from './projects.module.scss';
 
-export default function Home(props) {
-  if (!props.data.items) return 'Error';
+export default function Home({ works }) {
+  // if (!works.items) return 'Error';
   return (
     <div>
       <Head>
@@ -32,8 +32,7 @@ export default function Home(props) {
       </Head>
       <h1 className={styles.title}>Projects 👨‍💻</h1>
       <ul className={styles.list}>
-        {/* <img src="/open.png" width={120} className={styles.open} /> */}
-        {props.data.items.map((project, index) => (
+        {works.map((project, index) => (
           <WorkLink project={project} key={index} />
         ))}
       </ul>
@@ -46,13 +45,15 @@ const client = require('contentful').createClient({
   space: space,
   accessToken: accessToken,
 });
-export const getServerSideProps = async (ctx) => {
+
+export const getStaticProps = async (ctx) => {
   const works = await client.getEntries({
     content_type: 'coding',
   });
+  const randomWorks = await works.items.sort(() => Math.random() - 0.5);
   return {
     props: {
-      data: works,
+      works: randomWorks,
     },
   };
 };

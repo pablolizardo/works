@@ -13,7 +13,7 @@ const client = require('contentful').createClient({
   accessToken: accessToken,
 });
 const Project = (work) => {
-  const tags = work.fields.hashtags ? work.fields.hashtags.map(tag => `#${tag} `) : ' #dev #coding'
+  const tags = work.fields.hashtags ? work.fields.hashtags.map((tag) => `#${tag} `) : ' #dev #coding';
   return (
     <div>
       <Head>
@@ -63,7 +63,7 @@ const Project = (work) => {
         {work.fields.images &&
           work.fields.images.map((image) => (
             <div className={styles.image}>
-              <Image alt={image.fields.title} src={`https:${image.fields.file.url}`} key={image.sys.id} width={200} height={120} objectFit="cover" layout="responsive" />
+              <Image alt={image.fields.title} src={`https:${image.fields.file.url}`} key={image.sys.id} width={350} height={200} objectFit="cover" layout="intrinsic" />
             </div>
           ))}
       </div>

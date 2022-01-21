@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    > div {
+      margin: var(--space-xs)!important;
+      box-shadow: 0px 0px 0px transparent;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: border .3s, box-shadow .1s, opacity .2s;
+      &:hover{ 
+        box-shadow: 0px 0px 5px var(--color-gray-light);
+        opacity: .8;
+      }
+    }
+  }
+
+  .open {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    right: -50px;
+    top: -125px;
+    opacity: .7;
+    z-index: 4;
+  }

@@ -4,7 +4,7 @@ import styles from './BadgeList.module.scss';
 
 export default function BadgesList({ tags, size = 'sm' }) {
   return (
-    <p
+    <div
       className={styles.container}
       style={{
         fontSize: `var(--text-${size})`,
@@ -13,6 +13,6 @@ export default function BadgesList({ tags, size = 'sm' }) {
       {tags.map((tag, j) => (
         <Badge key={j}>{tag}</Badge>
       ))}
-    </p>
+    </div>
   );
 }

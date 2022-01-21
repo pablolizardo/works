@@ -37,7 +37,9 @@ function illustration(props) {
                   src={'https:' + image.fields.image.fields.file.url}
                   width="128"
                   height="128"
+                  layout="intrinsic"
                   objectFit="cover"
+                  objectPosition="50% 25%"
                 />
               ))}
           </div>
@@ -55,11 +57,10 @@ const client = require('contentful').createClient({
   space: space,
   accessToken: accessToken,
 });
-export const getServerSideProps = async (ctx) => {
+export const getStaticProps = async (ctx) => {
   const illustrations = await client.getEntries({
     content_type: 'illustration',
   });
-  // console.log(illustrations.items[0].fields.collection)
   return {
     props: {
       data: illustrations,
