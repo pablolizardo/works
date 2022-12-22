@@ -18,7 +18,7 @@ function Aside() {
           <SocialMediaLinks />
         </div>
         <p className={styles.paragraph}>
-          I'm Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also
+          I&apos;m Pablo from 🇦🇷 Argentina, and I do content on Design and Development. I really enjoy learning languages and frameworks like React and React Native, as well as work in Laravel. I also
           enjoy wireframing, <abbr title="User Interface">UI</abbr>, <abbr title="User Experience">UX</abbr>, and design in general.
         </p>
       </div>
