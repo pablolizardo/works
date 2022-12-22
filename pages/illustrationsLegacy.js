@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
 import Head from 'next/head';
+import Image from 'next/image';
+import React, { useState } from 'react';
 import styles from './illustrations.module.scss';
 const fs = require('fs');
 const path = require('path');
-function illustration({ images }) {
+
+const IllustrationPageLegacy = ({ images }) => {
   const [showModal, setShowModal] = useState();
-  const handleOpenModal = (filename) => {
-    setShowModal(filename);
-  };
-  const handleCloseModal = () => {
-    setShowModal();
-  };
+  const handleOpenModal = (filename) => setShowModal(filename)
+  const handleCloseModal = () => setShowModal()
+
   return (
     <div>
       <Head>
@@ -20,7 +18,7 @@ function illustration({ images }) {
       <h1>Illustrations</h1>
       {showModal && (
         <div id="backdrop" onClick={handleCloseModal}>
-          <img src={showModal} className="backdrop__image" />
+          <img src={showModal} className="backdrop__image" alt={'illustration'} />
         </div>
       )}
       <h2>The Wind</h2>
@@ -61,7 +59,7 @@ function illustration({ images }) {
   );
 }
 
-export default illustration;
+export default IllustrationPageLegacy;
 
 export async function getStaticProps() {
   const categories = fs.readdirSync(path.join(process.cwd(), '/public/images/illustrations'));

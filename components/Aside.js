@@ -8,7 +8,7 @@ function Aside() {
     <aside className={styles.container}>
       <div className={styles.info}>
         <div className={styles.image}>
-          <Image src="/me.png" alt="Picture of Pablo Lizardo" width={180} height={180} className={styles.foto}     />
+          <Image src="/me.png" alt="Picture of Pablo Lizardo" width={180} height={180} className={styles.foto} />
         </div>
         <h2 className={styles.title}>
           {/* <img src="/arrow.png" height={120} className={styles.arrow} /> */}
@@ -22,10 +22,10 @@ function Aside() {
           enjoy wireframing, <abbr title="User Interface">UI</abbr>, <abbr title="User Experience">UX</abbr>, and design in general.
         </p>
       </div>
-      <p className={styles.badges}>
+      <div className={styles.badges}>
 
-      <BadgesList tags={['Game', 'Backend', '3D', 'CSS Arch', 'FrontEnd']} />
-        </p>
+        <BadgesList tags={['Game', 'Backend', '3D', 'CSS Arch', 'FrontEnd']} />
+      </div>
     </aside>
   );
 }

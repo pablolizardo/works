@@ -4,7 +4,7 @@ const { Converter } = require('showdown');
 const path = require('path');
 import Head from 'next/head'
 
-function me({ html, lichess }) {
+const MePage = ({ html, lichess }) => {
   return (
     <div>
       <Head>
@@ -14,13 +14,13 @@ function me({ html, lichess }) {
       <main dangerouslySetInnerHTML={{ __html: html }} />
       <dl>
         <dt>♟ Lichess Blitz Rating</dt>
-        <dd><a href='https://lichess.org/@/pablolizardo' target="_blank">{lichess.perfs.blitz.rating}</a></dd>
+        <dd><a href='https://lichess.org/@/pablolizardo' target="_blank" rel="noreferrer">{lichess.perfs.blitz.rating}</a></dd>
       </dl>
     </div>
   )
 }
 
-export default me
+export default MePage
 
 
 export async function getStaticProps() {

@@ -50,7 +50,7 @@ const Project = (work) => {
           tags={work.fields.hashtags ? work.fields.hashtags.map((tag) => tag + ',') : 'dev,coding'}
         />
       </div>
-      <p className="p-0" dangerouslySetInnerHTML={{ __html: documentToHtmlString(work.fields.description) }} />
+      <div className="p-0" dangerouslySetInnerHTML={{ __html: documentToHtmlString(work.fields.description) }} />
 
       <div className={styles.featuredImage}>
         {work.fields.image && <Image alt={work.fields.title} src={`https:${work.fields.image.fields.file.url}`} width={600} height={330} layout="responsive" objectFit="contain"></Image>}
@@ -62,8 +62,8 @@ const Project = (work) => {
       <div className={styles.images}>
         {work.fields.images &&
           work.fields.images.map((image) => (
-            <div className={styles.image}>
-              <Image alt={image.fields.title} src={`https:${image.fields.file.url}`} key={image.sys.id} width={350} height={200} objectFit="cover" layout="intrinsic" />
+            <div className={styles.image} key={image.sys.id}>
+              <Image alt={image.fields.title} src={`https:${image.fields.file.url}`} width={350} height={200} objectFit="cover" layout="intrinsic" />
             </div>
           ))}
       </div>

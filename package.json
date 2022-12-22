@@ -8,25 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "@contentful/rich-text-html-renderer": "^14.1.2",
-    "contentful": "^8.2.0",
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "fs": "0.0.1-security",
-    "next": "10.0.4",
-    "node-sass": "^5.0.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "12.1.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "showdown": "^1.9.1"
   },
   "devDependencies": {
+    "contentful": "^9.1.5",
     "autoprefixer": "^10.4.13",
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.24",
+    "sass": "^1.57.1"
   }
 }

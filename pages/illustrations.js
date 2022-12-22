@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import styles from './illustrations.module.scss';
 
-function illustration(props) {
+const IllustrationPage = (props) => {
   const [showModal, setShowModal] = useState();
   const handleOpenModal = (filename) => {
     setShowModal(filename);
@@ -24,7 +25,7 @@ function illustration(props) {
         </div>
       )}
       {collections.map((collection) => (
-        <>
+        <section key={collection}>
           <h2>{collection}</h2>
           <div className={styles.container}>
             {props.data.items
@@ -33,6 +34,7 @@ function illustration(props) {
                 <Image
                   onClick={() => handleOpenModal('https:' + image.fields.image.fields.file.url)}
                   className="illustration"
+                  alt={image.fields.title}
                   key={image.fields.title}
                   src={'https:' + image.fields.image.fields.file.url}
                   width="128"
@@ -43,13 +45,13 @@ function illustration(props) {
                 />
               ))}
           </div>
-        </>
+        </section>
       ))}
     </div>
   );
 }
 
-export default illustration;
+export default IllustrationPage;
 
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
